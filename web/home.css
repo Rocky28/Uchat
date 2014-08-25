@@ -1,0 +1,218 @@
+body {
+        width: auto;
+    	height: auto;
+        background-color: #ffffff;
+        color: #000000;
+	font-family: tahoma, arial, sans-serif;
+	font-size: 10px;
+	text-align: center;
+        margin: auto;
+}
+
+a {
+        font-size: 15px;
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #69699c;
+}
+
+span {
+	display: none;
+}
+
+img {
+	border: none;
+}
+
+p {
+	margin: 10px 0px 5px;
+	text-align: justify;
+	line-height: 14px;
+}
+
+#header{
+    float: left;
+    background-color: #3399ff;
+    margin: auto;
+    width: 100%;
+    
+}
+
+#header h1{
+    float: left;
+    padding-left: 20px;
+    font-size: 60px;
+    color: #ffffff;
+    padding-top: 0px;
+}
+
+#signout{
+    float: right;
+    padding-top: 30px;
+    padding-right: 15px;
+}
+#signout h2{
+    color: #ffffff;
+}
+
+#signout input{
+    float: right;
+}
+
+
+
+webkit-input-placeholder {
+  color: #ccc;
+  font-size: 13px;
+}
+
+
+#status{
+    margin-left: 150px;
+    margin-top: -343px;
+}
+#status input[type=text]{
+    width:600px;
+    
+}
+#status input[type=submit]{
+    float: right;
+}
+
+input[type=text]{
+  height: 34px;
+  color: #404040;
+  background: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #c4c4c4 #d1d1d1 #d4d4d4;
+  border-radius:3px;
+  webkit-border-radius: 5px;
+  outline:3px solid rgba(200, 105, 137, 0.09);
+  moz-outline-radius:7px;
+  webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  
+}
+
+input[type=text]:focus{
+    border-color:#FFF7F9;
+  outline-color:rgba(254, 225, 235, 0.7);
+  outline-offset: 0;
+}
+
+.menu_div ul
+{
+	width: 150px;
+        padding-left: 0px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:15px;
+	color:#FFF;
+	list-style:none;
+	text-indent:15px;
+	background:#333333;
+}
+.menu_div ul li
+{
+	background:#333333;
+	line-height:40px;
+	border-bottom:1px solid #000;
+}
+.menu_div ul li a
+{
+	text-decoration:none;
+	color:#FFF;
+	display:block;
+}
+.menu_div ul li a:hover
+{
+	background:#3ea5ea;
+}
+.menu_div ul li#active
+{
+	background:#3ea5ea;
+}
+
+
+#frnzstatus{
+    margin-left: 160px;
+}
+
+#frnzstatus input[type=submit]
+{
+    margin-top: 15px;
+    float: left;
+}
+#j1{
+    font-size: 20px;
+    font-weight: bold;
+}
+#j2{
+    
+    font-size: 15px;
+    font-weight: normal;
+}
+#j3{
+    padding-top: 15px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+
+#page_footer {
+    float: left;
+    padding-top: 350px;
+}
+
+#powered_by {
+	padding-top: 30px;
+	float: right;
+	width: auto;
+	height: 30px;
+	color: #9595c2;
+	text-align: center;
+}
+
+#powered_by a {
+	color: #9595c2;
+}
+
+#product_brands {
+	float: left;
+}
+
+#product_brands ul {
+	width: 470px;
+	list-style-type: none;
+}
+
+#product_brands li {
+	margin: 5px 6px 3px 3px;
+	height: 40px;
+	list-style-type: none;
+	float: left;
+}
+
+#product_brands li.zalcom {
+	width: 107px;
+	background: url('brand_zalcom.gif') no-repeat 0px 0px;
+}
+
+#product_brands li.digital {
+	width: 95px;
+	background: url('brand_digital.gif') no-repeat 0px 0px;
+}
+
+#product_brands li.adept {
+	width: 126px;
+	background: url('brand_adept.gif') no-repeat 0px 0px;
+}
+
+#product_brands li.simtel {
+	width: 99px;
+	background: url('brand_simtel.gif') no-repeat 0px 0px;
+}

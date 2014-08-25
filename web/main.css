@@ -1,0 +1,291 @@
+body {
+        width: auto;
+    	height: auto;
+        background-color: #ffffff;
+        color: #000000;
+	font-family: tahoma, arial, sans-serif;
+	font-size: 10px;
+	text-align: center;
+        margin: auto;
+}
+
+a {
+        font-size: 15px;
+	color: #000000;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #69699c;
+}
+
+span {
+	display: none;
+}
+
+img {
+	border: none;
+}
+
+p {
+	margin: 10px 0px 5px;
+	text-align: justify;
+	line-height: 14px;
+}
+
+#header{
+    float: left;
+    background-color: #3399ff;
+    margin: auto;
+    width: 100%;
+    
+}
+
+#header h1{
+    float: left;
+    padding-left: 20px;
+    font-size: 60px;
+    color: #ffffff;
+    padding-top: 0px;
+}
+
+#signin{
+    float: right;
+    color: #ffffff;
+    font-size: 20px;
+    padding-right: 15px;
+    padding-top: 25px;
+}
+
+#signin a{
+    float: right;
+}
+
+
+#sitemap
+{
+    float: left;
+    font-size: 30px;
+    padding-top: 70px;
+    padding-left: 60px;
+}
+
+#signup{
+    float: right;
+    background-color: #ccccff;
+   
+    margin-bottom: auto;
+    margin-right: 10px;
+    
+}
+.container {
+    
+  float: right;
+  width: 350px;
+  height: 675px;
+  
+}
+.reg_section {
+  padding:0;
+  margin: 10px 0;
+  border-bottom: 1px dotted #eee;
+}
+.reg_section h3 {
+  font-size: 13px;
+  margin: 5px 0;
+  color: #C4A2A2;
+}
+/* Form */
+.register {
+  position: relative;
+  margin-top:20px;
+  padding: 20px 20px 20px;
+  background: #fff;
+  border-radius: 3px;
+  webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  moz-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.register:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  z-index: -1;
+  background:rgba(255, 173, 200, 0.08);
+  border-radius:7px;
+  webkit-border-radius: 7px;
+}
+.register h1 {
+  margin: -20px -20px 0;
+  line-height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  color:#694551;
+  text-align: center;
+  border-bottom:1px solid #EDEDED;
+  border-radius: 3px 3px 0 0;
+  webkit-box-shadow: 0 1px #f5f5f5;
+  moz-box-shadow: 0 1px #f5f5f5;
+  box-shadow: 0 1px #f5f5f5;
+}
+
+.register input[type=text], .register input[type=password] ,.register select,.register textarea {
+  width: 278px;
+}
+.register p.terms {
+  float: left;
+  line-height: 31px;
+}
+.register p.terms label {
+  font-size: 12px;
+  color: #777;
+  cursor: pointer;
+}
+.register p.terms input {
+  position: relative;
+  bottom: 1px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.register p.submit {
+    padding-top: 15px;
+  text-align: right;
+}
+
+.register-help {
+  margin: 20px 0;
+  font-size: 11px;
+  text-align: center;
+ 
+  color:#FFFFFF;
+}
+.register-help a {
+  color:#FF3679;
+  text-shadow:0 1px #1E0E13;
+}
+
+moz-placeholder {
+  color: #c9c9c9 !important;
+  font-size: 13px;
+}
+
+webkit-input-placeholder {
+  color: #ccc;
+  font-size: 13px;
+}
+
+input {
+  font-family:"Trebuchet MS",tahoma;
+  font-size: 14px;
+}
+
+input[type=text], input[type=password] ,.register select,.register textarea {
+  margin: 5px;
+  padding: 0 10px;
+  height: 34px;
+  color: #404040;
+  background: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #c4c4c4 #d1d1d1 #d4d4d4;
+  border-radius:3px;
+  webkit-border-radius: 5px;
+  outline:3px solid rgba(200, 105, 137, 0.09);
+  moz-outline-radius:7px;
+  webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  margin:10px 0;
+}
+input[type=text]:focus, input[type=password]:focus{
+  border-color:#FFF7F9;
+  outline-color:rgba(254, 225, 235, 0.7);
+  outline-offset: 0;
+}
+
+
+.lt-ie9 input[type=text], .lt-ie9 input[type=password] {
+  line-height: 34px;
+}
+.register select {
+  padding:6px 10px;
+  width: 300px;
+  color: #777777;
+}
+
+
+
+
+.links {
+  zoom: 1;
+}
+.links:before, .links:after {
+  content: "";
+  display: table;
+}
+.links:after {
+  clear: both;
+}
+.links a {
+  padding: 6px 0;
+  float: left;
+  width: 50%;
+  font-size: 14px;
+}
+
+#page_footer {
+    float: left;
+    padding-top: 350px;
+}
+
+#powered_by {
+	padding-top: 30px;
+	float: right;
+	width: auto;
+	height: 30px;
+	color: #9595c2;
+	text-align: center;
+}
+
+#powered_by a {
+	color: #9595c2;
+}
+
+#product_brands {
+	float: left;
+}
+
+#product_brands ul {
+	width: 470px;
+	list-style-type: none;
+}
+
+#product_brands li {
+	margin: 5px 6px 3px 3px;
+	height: 40px;
+	list-style-type: none;
+	float: left;
+}
+
+#product_brands li.zalcom {
+	width: 107px;
+	background: url('brand_zalcom.gif') no-repeat 0px 0px;
+}
+
+#product_brands li.digital {
+	width: 95px;
+	background: url('brand_digital.gif') no-repeat 0px 0px;
+}
+
+#product_brands li.adept {
+	width: 126px;
+	background: url('brand_adept.gif') no-repeat 0px 0px;
+}
+
+#product_brands li.simtel {
+	width: 99px;
+	background: url('brand_simtel.gif') no-repeat 0px 0px;
+}
