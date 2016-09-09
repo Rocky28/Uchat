@@ -4,14 +4,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Uchat</title>
         <link rel="stylesheet" href="chatroom.css" type="text/css" media="screen" />
+        <script type="text/javascript" src="autorefresh.js"></script>
+        <script type="text/javascript">
+            doCompletion();
+            </script>
     </head>
-    <body>
+    <body><body onload="init()">
         <div id="header">
             <h1>Uchat</h1>
             <div id="signout">
                 <form name="frm1">
                     <table>
-                        <tr><td><h2>Welcome <% HttpSession s=request.getSession(true); out.println((String)s.getAttribute("fname")); %></h2></td></tr>
+                        <tr><td><h2 id="senderemailcurrect">Welcome <% HttpSession s=request.getSession(true); out.println((String)s.getAttribute("fname")); %></h2></td></tr>
                         <tr><td><input type="submit" name="s1" value="Logout"></td></tr>
                     </table>
                     
@@ -40,14 +44,31 @@
            </form>
        </div>
 
-      <div id="pmsgs">
-          <% UchatDb ob=new UchatDb(); ResultSet rs=ob.getMsgs((String)s.getAttribute("current"), (String)s.getAttribute("chatwith")); rs.afterLast();while(rs.previous()){ String myem=(String)s.getAttribute("current"); String em=rs.getString(1); String em1=rs.getString(2); if(em.trim().equals(myem.trim())){ %>
-          <div id="mysyd"><p><% out.println(rs.getString(3)); %></p></div><br><br><% }else{ %>
-          <div id="nmysyd"><p><% out.println(rs.getString(3)); %></p></div><br><br><% }} %>
-      </div>
-
-       
-
+           <!--<iframe id="newframe" name="chatmsgsframe" src="chatmsgframe.jsp" align="left" width="600px" height="300px" frameborder="0"></iframe>-->
+           <!--<div id="pmsgs">
+           <%--<% UchatDb ob = new UchatDb();
+              ob.markallread((String) s.getAttribute("current"));
+              ResultSet rs = ob.getMsgs((String) s.getAttribute("current"), (String) s.getAttribute("chatwith"));
+              rs.afterLast();
+              while (rs.previous()) {
+                  String myem = (String) s.getAttribute("current");
+                  String em = rs.getString("sender_email_id");
+                  String em1 = rs.getString("reciever_email_id");
+                  if (em.trim().equals(myem.trim())) { %>
+           <div id="mysyd"><p><% out.println(rs.getString("msg")); %></p></div><br><br><% } else { %>
+           <div id="nmysyd"><p><% out.println(rs.getString("msg")); %></p></div><br><br><% }
+              } %>--%>
+       </div>-->
+           <div id="pmsgs">
+               <table>
+                   
+                   <tr>
+                       <td id="auto-row" colspan="2">
+                           <table id="complete-table"></table>
+                       </td>
+                   </tr>
+               </table>
+           </div>
     </body>
 </html>
 

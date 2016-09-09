@@ -37,7 +37,15 @@ public class supdate extends HttpServlet {
         HttpSession s=request.getSession(true);
         String str=request.getParameter("t1");
         ob.addUpdate((String)s.getAttribute("current"),str);
-        response.sendRedirect("home.jsp");
+        String page=(String)s.getAttribute("page");
+        if(page.equals("home"))
+        {
+         response.sendRedirect("home.jsp");   
+        }
+        else
+        {
+            response.sendRedirect("latest.jsp");
+        }
     //    processRequest(request, response);
     }
 

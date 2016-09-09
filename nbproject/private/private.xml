@@ -1,9 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?><project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/H:/My%20projects/Uchat/src/java/P1/UchatDb.java</file>
+            <file>file:/C:/Users/rocky/Documents/GitHub/Uchat/web/autorefresh.js</file>
+            <file>file:/C:/Users/rocky/Documents/GitHub/Uchat/web/chatroom.jsp</file>
+            <file>file:/C:/Users/rocky/Documents/GitHub/Uchat/src/java/P1/UchatDb.java</file>
+            <file>file:/C:/Users/rocky/Documents/GitHub/Uchat/src/java/P1/checkfornewmsg.java</file>
+            <file>file:/C:/Users/rocky/Documents/GitHub/Uchat/src/java/P1/find.java</file>
+            <file>file:/C:/Users/rocky/Documents/GitHub/Uchat/src/java/P1/allchats.java</file>
+            <file>file:/C:/Users/rocky/Documents/GitHub/Uchat/src/java/P1/comment.java</file>
+            <file>file:/C:/Users/rocky/Documents/GitHub/Uchat/web/chatmsgframe.jsp</file>
+            <file>file:/C:/Users/rocky/Documents/GitHub/Uchat/src/java/P1/PrepChats.java</file>
+            <file>file:/C:/Users/rocky/Documents/GitHub/Uchat/src/java/P1/Prepput.java</file>
         </group>
     </open-files>
 </project-private>

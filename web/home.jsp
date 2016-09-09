@@ -22,7 +22,7 @@
     	<ul>
         <li id="active"><a href="home.jsp">Home</a></li>
         <li><a href="friends.jsp">Friends</a></li>
-        <li><a href="pending.jsp">Pending</a></li>
+        <li><a href="pending.jsp">Pending <% UchatDb ob=new UchatDb(); boolean b=ob.getPMsginfo((String)s.getAttribute("current")); boolean b1=ob.getPReqinfo((String)s.getAttribute("current"));if(b1==true || b==true){ %><img src="new-logo.jpg" width="20%" style="padding-left: 5px;"><% } %></a></li>
         <li><a href="latest.jsp">Latest Updates</a></li>
         <li><a href="#">Account Settings</a></li>
         <li><a href="#">Feedback</a></li>
@@ -32,7 +32,7 @@
         
         <div id ="status">
             <form method="post" action="supdate">
-                <table>
+                <table><% s.setAttribute("page", "home"); %>
                     <tr><td><input type="text" name="t1" placeholder="Status Update"></td></tr>
                     <tr><td><input type="submit" name="s1" value="Submit"></td></tr>
                 </table>
@@ -42,7 +42,7 @@
         </div>
         <div id="frnzstatus">
             <p id="j1">Friends Online</p><form method="post" action="chat">
-            <% UchatDb ob=new UchatDb();String allres=ob.getOn((String)s.getAttribute("current")),temp="";int c=0; if(allres.equals("")){%><p id="j2">No Friends Online.........</p>
+            <% ob=new UchatDb();String allres=ob.getOn((String)s.getAttribute("current")),temp="";int c=0; if(allres.equals("")){%><p id="j2">No Friends Online.........</p>
             <%} for(int i=0;i<allres.length();i++){if(allres.charAt(i)==','){c++;%><input type="submit" name="<% out.print("s"+c); %>" value="<% out.println(temp); %>"><p id="j3">Click to chat</p><br><% temp="";continue;}temp+=allres.charAt(i);}%></form>
         </div>
         

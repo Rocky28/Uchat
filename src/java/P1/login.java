@@ -41,8 +41,8 @@ public class login extends HttpServlet {
         ResultSet b=ob.chckDet(name);
         if(b.next())
         {
-            String fname=b.getString(1);
-            String detpass=b.getString(7);
+            String fname=b.getString("firstname");
+            String detpass=b.getString("password");
             if(pass.equals(detpass))
             {
                s.setAttribute("fname", fname);

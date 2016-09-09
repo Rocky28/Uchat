@@ -139,7 +139,9 @@ input[type=text]:focus{
 
 
 #frnzupdates{
-    margin-left: 160px;
+    float: left;
+    position: static;
+    margin-left: 160px
 }
 
 #j1{
@@ -171,18 +173,19 @@ input[type=text]:focus{
 #count2{
     font-size: 10px;
     font-weight: bolder;
-    
+    padding-top: 5px
 }
 #likebutton{
     float: left;
 }
 #sharebutton{
    float: left;
+   padding-left: 5px
 }
 #commentbutton{
-    float: left;
+    
     margin-top: 60px;
-    margin-left: -100px;
+   
 }
 
 #sharebutton input[type=submit]{

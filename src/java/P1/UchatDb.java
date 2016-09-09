@@ -12,8 +12,8 @@ public class UchatDb
     {
         try
         {
-            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-            db=DriverManager.getConnection("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=G:/My projects/Uchat/Uchat.accdb");
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            db=DriverManager.getConnection("jdbc:ucanaccess://C:/Users/rocky/Documents/GitHub/Uchat/Uchat.accdb");
         }
         catch(Exception e1)
         {
@@ -25,7 +25,7 @@ public class UchatDb
     {
         int r=0;
         try{
-            ps=db.prepareStatement("insert into signup values(?,?,?,?,?,?,?,?)");
+            ps=db.prepareStatement("insert into signup(firstname,lastname,emailaddress,phone,dob,sex,password,country) values(?,?,?,?,?,?,?,?)");
             ps.setString(1, fname);
             ps.setString(2, lname);
             ps.setString(3, em);
@@ -92,7 +92,7 @@ public class UchatDb
           boolean b=rs.next();
           if(b==false)
           {
-              ps=db.prepareStatement("insert into friends values(?,?)");
+              ps=db.prepareStatement("insert into friends(emailaddress,friend) values(?,?)");
               ps.setString(1, em);
               ps.setString(2, frnzname+",");
               int r=ps.executeUpdate();
@@ -115,7 +115,7 @@ public class UchatDb
           boolean b1=rs2.next();
           if(b1==false)
           {
-              ps=db.prepareStatement("insert into friends values(?,?)");
+              ps=db.prepareStatement("insert into friends(emailaddress,friend) values(?,?)");
               ps.setString(1, frnzname);
               ps.setString(2, em+",");
               int r=ps.executeUpdate();
@@ -138,9 +138,9 @@ public class UchatDb
           em=em.trim();
           while(rs1.next())
           {
-             str=rs1.getString(1);
+             str=rs1.getString("emailaddress");
              str=str.trim();
-             str1=rs1.getString(2);
+             str1=rs1.getString("semailaddress");
              int c=0;
              b=false;
              System.out.println(em.length()+" ,"+str.length());
@@ -215,9 +215,9 @@ public class UchatDb
           rs=ps.executeQuery();
           while(rs.next())
           {
-            String str=rs.getString(1);
+            String str=rs.getString("emailaddress");
             str=str.trim();
-            String str1=rs.getString(2);
+            String str1=rs.getString("semailaddress");
             if(str.equals(em))
             {
                 req+=str1;
@@ -349,11 +349,11 @@ public class UchatDb
           rs=ps.executeQuery();
           while(rs.next())
           {
-              String str=rs.getString(1),str1;
+              String str=rs.getString("emailaddress"),str1;
               System.out.println(str+frnz);
               if(str.trim().equals(frnz.trim()))
               {
-                  str1=rs.getString(2);
+                  str1=rs.getString("semailaddress");
                   str1+=em+",";
                   System.out.println(str1);
                   ps=db.prepareStatement("update pendingreq set semailaddress=? where emailaddress=?");
@@ -365,9 +365,9 @@ public class UchatDb
           }
           if(r==0)
           {
-              ps=db.prepareStatement("insert into pendingreq values(?,?)");
+              ps=db.prepareStatement("insert into pendingreq(emailaddress,semailaddress) values(?,?)");
                   ps.setString(1,frnz.trim());
-                  ps.setString(2,em.trim());
+                  ps.setString(2,em.trim()+",");
                   ps.executeUpdate();
           }
       }catch(Exception e){System.out.println(e);}
@@ -465,7 +465,7 @@ public class UchatDb
       Date dt=new Date();
       String newdate=dt.toString(),allres="";
       try{
-          ps=db.prepareStatement("insert into online values(?,?)");
+          ps=db.prepareStatement("insert into online(emailaddress,dnt) values(?,?)");
           ps.setString(1, em.trim());
           ps.setString(2, newdate);
           ps.executeUpdate();
@@ -487,8 +487,8 @@ public class UchatDb
           rs1=ps.executeQuery();
           while(rs1.next())
           {
-              String email=rs1.getString(1),temp="";
-              String dnt=rs1.getString(2);
+              String email=rs1.getString("emailaddress"),temp="";
+              String dnt=rs1.getString("dnt");
               System.out.println(email+dnt);
               for(int i=0;i<frnz.length();i++)
               {
@@ -540,8 +540,9 @@ public class UchatDb
   public String getMyFrnz(String em)
   {
       String res="";
-      try{
-          ps=db.prepareStatement("select friend from friends where emailaddress=?");
+      try{ 
+          String sql="select friend from friends where emailaddress=?";
+          ps=db.prepareStatement(sql);
           ps.setString(1,em);
           rs=ps.executeQuery();
           rs.next();
@@ -612,7 +613,7 @@ public class UchatDb
   public void addComnt(int id,String comnt,String em)
   {
       try{
-          ps=db.prepareStatement("insert into comment values(?,?,?)");
+          ps=db.prepareStatement("insert into comment(emailaddress,updateid,comnt) values(?,?,?)");
           ps.setString(1, em);
           ps.setInt(2, id);
           ps.setString(3, comnt);
@@ -657,11 +658,12 @@ public class UchatDb
       Date ob=new Date();
       String dt=ob.toString();
       try{
-          ps=db.prepareStatement("insert into chats values(?,?,?,?)");
+          ps=db.prepareStatement("insert into chats(sender_email_id,reciever_email_id,msg,dnt,check_msg) values(?,?,?,?,?)");
           ps.setString(1, em.trim());
           ps.setString(2, em1.trim());
           ps.setString(3, str.trim());
           ps.setString(4, dt);
+          ps.setString(5,"UNREAD");
           ps.executeUpdate();
           if(b==false)
           {
@@ -681,7 +683,7 @@ public class UchatDb
               }
               else
               {
-                  ps=db.prepareStatement("insert into pendingmsg values(?,?,?)");
+                  ps=db.prepareStatement("insert into pendingmsg(emailaddress,pending,semailaddress) values(?,?,?)");
                   ps.setString(1, em1.trim());
                   ps.setInt(2, 1);
                   ps.setString(3, em.trim());
@@ -694,11 +696,51 @@ public class UchatDb
   {
       boolean b=false;
       try{
-          ps=db.prepareStatement("select * from online where emailaddress=?");
-          ps.setString(1, em);
+          String sql="select * from online where emailaddress=?";
+          ps=db.prepareStatement(sql);
+          ps.setString(1, em.trim());
           rs=ps.executeQuery();
-          b=rs.next();
-      }catch(Exception e){}
+          while(rs.next())
+          { 
+              b=true;
+              break;
+          }
+      }catch(Exception e){System.out.println(e);}
+      System.out.println(b);
       return b;
+  }
+  public boolean checkfornewmsg(String email)
+  {
+      boolean b=false;
+      String chkstat="";
+      try{
+          String sql="select check_msg from chats where reciever_email_id=?";
+          ps=db.prepareStatement(sql);
+          ps.setString(1, email);
+          rs=ps.executeQuery();
+          while(rs.next())
+          {
+             chkstat=rs.getString(1);
+             if(chkstat.equals("READ"))
+             {
+                 continue;
+             }
+             else
+             {
+                 return true;
+             }
+          }
+          
+      }catch(Exception e){System.out.println(e);}
+      return b;
+  }
+  public void markallread(String em)
+  {
+      try{
+          String sql="update chats set check_msg='READ' where reciever_email_id=? and check_msg='UNREAD'";
+          ps=db.prepareStatement(sql);
+          ps.setString(1, em);
+          ps.executeUpdate();
+      }catch(Exception e){}
   }
 }

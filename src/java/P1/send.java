@@ -37,6 +37,7 @@ public class send extends HttpServlet {
         HttpSession s=request.getSession(true);
         UchatDb ob=new UchatDb();
         boolean b=ob.chkonlyn((String)s.getAttribute("chatwith"));
+        System.out.println("index"+b+"chatwith"+(String)s.getAttribute("chatwith"));
         ob.insertMsg((String)s.getAttribute("current"),(String)s.getAttribute("chatwith"),str,b);
         response.sendRedirect("chatroom.jsp"); 
     //    processRequest(request, response);
